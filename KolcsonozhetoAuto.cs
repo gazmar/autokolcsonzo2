@@ -1,7 +1,8 @@
-﻿using System;
+﻿
+using System;
 
 
-namespace Autokolcsonzo
+namespace Kolcsonzo
 {
 
     public class KolcsonozhetoAuto
@@ -77,8 +78,10 @@ namespace Autokolcsonzo
 
         public void setBerelheto(bool szabad) { berelheto = szabad; }
 
-        public void setGyartasiIdo(int ev) { gyartasEve = ev; }
 
+
+        //uj!!!
+        public void setGyartasiIdo(int ev) { gyartasEve = ev; }
 
 
         /*
@@ -86,6 +89,29 @@ namespace Autokolcsonzo
          */
 
         //KATEGÓRIA beállítás
+        public void kategoriaBeallitas()
+        {
+            int eletkor = DateTime.Now.Year - gyartasEve;
+
+            if (eletkor <= 3)
+            {
+
+                kategoria = 'A';
+
+            } else if(eletkor <= 10)
+            {
+
+                kategoria = 'B';
+
+            } else
+            {
+                kategoria = 'C';
+            }
+
+        }
+
+
+
 
 
 
@@ -96,3 +122,4 @@ namespace Autokolcsonzo
 
     }
 }
+
